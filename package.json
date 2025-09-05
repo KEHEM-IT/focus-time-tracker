@@ -1,0 +1,181 @@
+{
+  "name": "focus-time-tracker",
+  "displayName": "Focus Time Tracker Enhanced",
+  "description": "A comprehensive productivity extension that tracks coding sessions, reminds you to take breaks, provides beautiful analytics, and keeps you motivated with achievements and streaks.",
+  "version": "1.0.0",
+  "publisher": "KEHEM IT",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "productivity",
+    "focus",
+    "pomodoro",
+    "time tracking",
+    "breaks",
+    "wellness",
+    "motivation",
+    "analytics",
+    "dashboard"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./src/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "focusTimeTracker.toggleSession",
+        "title": "Toggle Focus Session",
+        "category": "Focus Time"
+      },
+      {
+        "command": "focusTimeTracker.showStats",
+        "title": "Show Advanced Statistics",
+        "category": "Focus Time"
+      },
+      {
+        "command": "focusTimeTracker.openSettings",
+        "title": "Open Settings",
+        "category": "Focus Time"
+      },
+      {
+        "command": "focusTimeTracker.quickBreak",
+        "title": "Take Quick Break",
+        "category": "Focus Time"
+      },
+      {
+        "command": "focusTimeTracker.showMotivation",
+        "title": "Show Motivational Message",
+        "category": "Focus Time"
+      },
+      {
+        "command": "focusTimeTracker.resetStats",
+        "title": "Reset All Statistics",
+        "category": "Focus Time"
+      },
+      {
+        "command": "focusTimeTracker.showDashboard",
+        "title": "Show Live Dashboard",
+        "category": "Focus Time"
+      }
+    ],
+    "configuration": {
+      "title": "Focus Time Tracker",
+      "properties": {
+        "focusTimeTracker.soundEnabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable sound notifications for focus sessions and breaks"
+        },
+        "focusTimeTracker.soundMethod": {
+          "type": "string",
+          "enum": [
+            "system",
+            "webview",
+            "auto"
+          ],
+          "default": "auto",
+          "description": "Method to play sounds: system (OS audio), webview (web audio), or auto (best available)"
+        },
+        "focusTimeTracker.sessionDuration": {
+          "type": "number",
+          "default": 25,
+          "minimum": 5,
+          "maximum": 120,
+          "description": "Focus session duration in minutes"
+        },
+        "focusTimeTracker.breakDuration": {
+          "type": "number",
+          "default": 5,
+          "minimum": 1,
+          "maximum": 30,
+          "description": "Break duration in minutes"
+        },
+        "focusTimeTracker.enableMotivation": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show motivational messages during focus sessions"
+        },
+        "focusTimeTracker.motivationInterval": {
+          "type": "number",
+          "default": 10,
+          "minimum": 5,
+          "maximum": 60,
+          "description": "Interval between motivational messages in minutes"
+        },
+        "focusTimeTracker.autoBreak": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically suggest breaks after completing focus sessions"
+        },
+        "focusTimeTracker.dailyGoal": {
+          "type": "number",
+          "default": 120,
+          "minimum": 30,
+          "maximum": 480,
+          "description": "Daily focus time goal in minutes"
+        }
+      }
+    },
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "focusTimeTracker.toggleSession",
+          "when": "true"
+        },
+        {
+          "command": "focusTimeTracker.showStats",
+          "when": "true"
+        },
+        {
+          "command": "focusTimeTracker.openSettings",
+          "when": "true"
+        },
+        {
+          "command": "focusTimeTracker.quickBreak",
+          "when": "true"
+        },
+        {
+          "command": "focusTimeTracker.showMotivation",
+          "when": "true"
+        },
+        {
+          "command": "focusTimeTracker.resetStats",
+          "when": "true"
+        },
+        {
+          "command": "focusTimeTracker.showDashboard",
+          "when": "true"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "eslint": "^8.28.0",
+    "@vscode/test-electron": "^2.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/focus-time-tracker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/focus-time-tracker/issues"
+  },
+  "homepage": "https://github.com/yourusername/focus-time-tracker#readme",
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#007ACC",
+    "theme": "dark"
+  }
+}
