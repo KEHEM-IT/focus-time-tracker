@@ -3,7 +3,7 @@
   "displayName": "Focus Time Tracker Enhanced",
   "description": "A comprehensive productivity extension that tracks coding sessions, reminds you to take breaks, provides beautiful analytics, and keeps you motivated with achievements and streaks.",
   "version": "1.0.0",
-  "publisher": "KEHEM IT",
+  "publisher": "KEHEMIT",
   "engines": {
     "vscode": "^1.74.0"
   },
