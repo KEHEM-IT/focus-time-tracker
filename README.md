@@ -40,7 +40,9 @@ A comprehensive productivity extension for Visual Studio Code that helps you mai
 5. The extension will activate automatically and show a status bar item
 
 ## Getting Started
-
+### Saved Color Codes!
+![Demo](images/demo.webp)
+---
 ### Quick Start
 
 1. Click the "Ready" status bar item to start your first focus session
